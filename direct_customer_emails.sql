@@ -6,6 +6,7 @@ FROM
 	zendesk_v4.tickets
 WHERE (zendesk_v4.tickets.raw_subject NOT LIKE 'Re:%'
 	AND zendesk_v4.tickets.raw_subject NOT LIKE 'Recurring Custom Plan Purchase%'
+	AND zendesk_v4.tickets.raw_subject NOT LIKE 'Non-recurring Custom Plan Purchase'
 	AND zendesk_v4.tickets.raw_subject NOT LIKE 'RE:%'
 	AND zendesk_v4.tickets.raw_subject NOT LIKE 'Fw%')
 AND (zendesk_v4.tickets.via__source__to__address LIKE '%@vshred.com'
